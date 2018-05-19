@@ -1,12 +1,5 @@
-//
-//  AppDelegate.m
-//  TODO
-//
-//  Created by MarkChang on 2018/5/19.
-//  Copyright © 2018年 MarkChang. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "MKCTodoViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +10,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:todoViewController];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
