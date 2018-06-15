@@ -14,12 +14,12 @@
 		0D2B45D320AFFB4700CCD09F /* MKCTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D220AFFB4700CCD09F /* MKCTodoViewController.m */; };
 		0D2B45D620AFFDB500CCD09F /* MKCApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D520AFFDB500CCD09F /* MKCApiService.m */; };
 		0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */; };
+		0D4E641720D3F1BD009FC4FE /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1852220D3EDCC00A10055 /* libOCMock.a */; };
 		0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */; };
 		0D94655B20C2BF36003108A8 /* todos.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D94655A20C2BF36003108A8 /* todos.json */; };
 		0DBFA6ED20B0537B00B1C724 /* TODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFA6EC20B0537B00B1C724 /* TODOUITests.swift */; };
 		0DBFA70920B053E300B1C724 /* MKCTodoViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFA70820B053E300B1C724 /* MKCTodoViewModelTests.m */; };
 		0DD4EAA620C2840000EC4491 /* MKCTodoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4EAA520C2840000EC4491 /* MKCTodoViewControllerTests.m */; };
-		0DF0DF1420BA4D0500514E39 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF0DF1320BA4D0500514E39 /* OCMock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +55,17 @@
 		0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCTodoViewModel.m; sourceTree = "<group>"; };
 		0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiServiceTests.m; sourceTree = "<group>"; };
 		0D94655A20C2BF36003108A8 /* todos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = todos.json; path = WireMock/__files/todos.json; sourceTree = SOURCE_ROOT; };
+		0DB1851820D3EDCB00A10055 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		0DB1851920D3EDCB00A10055 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		0DB1851A20D3EDCB00A10055 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		0DB1851B20D3EDCB00A10055 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		0DB1851C20D3EDCB00A10055 /* OCMFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMFunctions.h; sourceTree = "<group>"; };
+		0DB1851D20D3EDCB00A10055 /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		0DB1851E20D3EDCB00A10055 /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		0DB1851F20D3EDCB00A10055 /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		0DB1852020D3EDCB00A10055 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		0DB1852120D3EDCB00A10055 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		0DB1852220D3EDCC00A10055 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		0DBFA6EA20B0537B00B1C724 /* TODOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TODOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DBFA6EC20B0537B00B1C724 /* TODOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOUITests.swift; sourceTree = "<group>"; };
 		0DBFA6EE20B0537B00B1C724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +76,6 @@
 		0DBFA71720B12FA300B1C724 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0DBFA71820B12FAF00B1C724 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
 		0DD4EAA520C2840000EC4491 /* MKCTodoViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCTodoViewControllerTests.m; sourceTree = "<group>"; };
-		0DF0DF1320BA4D0500514E39 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF0DF1420BA4D0500514E39 /* OCMock.framework in Frameworks */,
+				0D4E641720D3F1BD009FC4FE /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,10 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				0D2B45BA20AFFABE00CCD09F /* TODO */,
-				0DF0DF1120BA4CC600514E39 /* Library */,
+				0D4E641520D3F19F009FC4FE /* Library */,
 				0DBFA6EB20B0537B00B1C724 /* TODOUITests */,
 				0DBFA70720B053E300B1C724 /* TODOTests */,
 				0D2B45B920AFFABE00CCD09F /* Products */,
+				0DB1852720D3F04A00A10055 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +142,23 @@
 			path = TODO;
 			sourceTree = "<group>";
 		};
+		0D4E641520D3F19F009FC4FE /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				0D4E641620D3F1AC009FC4FE /* OCMock-3.4.1 */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		0D4E641620D3F1AC009FC4FE /* OCMock-3.4.1 */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1852520D3EF2800A10055 /* usr */,
+				0DB1852420D3EF1500A10055 /* lib */,
+			);
+			path = "OCMock-3.4.1";
+			sourceTree = "<group>";
+		};
 		0D94444320B149F700C0E310 /* config */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +167,54 @@
 				0DBFA71620B12F8400B1C724 /* Debug.xcconfig */,
 			);
 			path = config;
+			sourceTree = "<group>";
+		};
+		0DB1851720D3EDCB00A10055 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1851820D3EDCB00A10055 /* OCMockObject.h */,
+				0DB1851920D3EDCB00A10055 /* OCMMacroState.h */,
+				0DB1851A20D3EDCB00A10055 /* OCMock.h */,
+				0DB1851B20D3EDCB00A10055 /* NSNotificationCenter+OCMAdditions.h */,
+				0DB1851C20D3EDCB00A10055 /* OCMFunctions.h */,
+				0DB1851D20D3EDCB00A10055 /* OCMStubRecorder.h */,
+				0DB1851E20D3EDCB00A10055 /* OCMRecorder.h */,
+				0DB1851F20D3EDCB00A10055 /* OCMLocation.h */,
+				0DB1852020D3EDCB00A10055 /* OCMConstraint.h */,
+				0DB1852120D3EDCB00A10055 /* OCMArg.h */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		0DB1852420D3EF1500A10055 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1852220D3EDCC00A10055 /* libOCMock.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		0DB1852520D3EF2800A10055 /* usr */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1852620D3EF3E00A10055 /* include */,
+			);
+			path = usr;
+			sourceTree = "<group>";
+		};
+		0DB1852620D3EF3E00A10055 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1851720D3EDCB00A10055 /* OCMock */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		0DB1852720D3F04A00A10055 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0DBFA6EB20B0537B00B1C724 /* TODOUITests */ = {
@@ -180,22 +256,6 @@
 				0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */,
 			);
 			path = "Todo List";
-			sourceTree = "<group>";
-		};
-		0DF0DF1120BA4CC600514E39 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				0DF0DF1220BA4CEF00514E39 /* OCMock-3.4.1 */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		0DF0DF1220BA4CEF00514E39 /* OCMock-3.4.1 */ = {
-			isa = PBXGroup;
-			children = (
-				0DF0DF1320BA4D0500514E39 /* OCMock.framework */,
-			);
-			path = "OCMock-3.4.1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,14 +648,19 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/OCMock-3.4.1",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Library/OCMock-3.4.1/usr/include";
 				INFOPLIST_FILE = TODOTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Library/OCMock-3.4.1/lib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -614,14 +679,19 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/OCMock-3.4.1",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Library/OCMock-3.4.1/usr/include";
 				INFOPLIST_FILE = TODOTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Library/OCMock-3.4.1/lib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -740,14 +810,19 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/OCMock-3.4.1",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Library/OCMock-3.4.1/usr/include";
 				INFOPLIST_FILE = TODOTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Library/OCMock-3.4.1/lib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
