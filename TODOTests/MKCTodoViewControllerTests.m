@@ -93,6 +93,35 @@
     XCTAssertEqual([todoViewController.tableView numberOfRowsInSection:0], 0);
 }
 
+/**
+ 驗證 Cell 顯示的資料
+ */
+- (void)testCellData {
+    // Arrange - 讀取本機 JSON file，模擬 API 回傳資料
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *filePath = [bundle pathForResource:@"todos" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSArray *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
+    
+    // Act - 載入畫面
+    MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
+    [todoViewController view];
+    
+    // Assert - 驗證 Cell 顯示資料
+    UITableView *todoTableView = todoViewController.tableView;
+    [responseObject enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UITableViewCell *cell = [todoTableView.dataSource tableView:todoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:idx inSection:0]];
+        
+        XCTAssertEqualObjects(cell.textLabel.text, obj[@"title"]);
+        
+        UITableViewCellAccessoryType accessoryType = [obj[@"completed"] boolValue] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        XCTAssertEqual(cell.accessoryType, accessoryType);
+    }];
+}
+
 #pragma mark - 使用者 UI 操作
 
 /**
