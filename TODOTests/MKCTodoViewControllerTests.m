@@ -38,7 +38,7 @@
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *filePath = [bundle pathForResource:@"todos" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSArray *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
@@ -132,7 +132,7 @@
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *filePath = [bundle pathForResource:@"todos" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSArray *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
