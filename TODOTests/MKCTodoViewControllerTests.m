@@ -189,15 +189,18 @@
     NSError *error = [NSError errorWithDomain:@"test.error" code:123 userInfo:@{}];
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:OCMOCK_ANY failureHandler:([OCMArg invokeBlockWithArgs:error, nil])]);
     
-    id mockAlertController = OCMClassMock([UIAlertController class]);
-    
     // Act - 載入畫面
     id mockTodoViewController = OCMPartialMock([[MKCTodoViewController alloc] init]);
     [mockTodoViewController view];
     
-    // Assert - 驗證 alert 訊息，及 alert 被顯示
-    OCMVerify([mockAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert]);
-    OCMVerify([mockTodoViewController presentViewController:OCMOCK_ANY animated:YES completion:nil]);
+    // Assert - 驗證 alert 有被顯示，及 alert 的訊息文字
+    OCMVerify([mockTodoViewController presentViewController:[OCMArg checkWithBlock:^BOOL(id obj) {
+        UIAlertController *alertController = obj;
+        
+        return ([alertController.title isEqualToString:@"Error"] &&
+                [alertController.message isEqualToString:error.localizedDescription] &&
+                alertController.preferredStyle == UIAlertControllerStyleAlert);
+    }] animated:YES completion:nil]);
 }
 
 @end
