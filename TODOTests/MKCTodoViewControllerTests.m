@@ -9,6 +9,7 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicatorView;
 @property (strong, nonatomic) UIBarButtonItem *refreshBarButtonItem;
+@property (strong, nonatomic) MKCTodoViewModel *todoViewModel;
 
 @end
 
@@ -59,11 +60,15 @@
  */
 - (void)testLoadingState {
     // Arrange - 將狀態固定回傳 Loading
+    MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
+    
     id mockTodoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
-    [OCMStub([mockTodoViewModel currentUiState]) andReturn:@(UIStateLoading)];
+    [OCMStub([mockTodoViewModel currentUiState]) andReturnValue:OCMOCK_VALUE(UIStateLoading)];
+    [mockTodoViewModel setDelegate:todoViewController];
+    
+    todoViewController.todoViewModel = mockTodoViewModel;
     
     // Act - 載入畫面
-    MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
     [todoViewController view];
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.0]];
     
