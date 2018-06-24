@@ -130,8 +130,8 @@
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
     
     id mockTodoViewModelDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
-    MKCTodoViewModel *todoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
-    todoViewModel.delegate = mockTodoViewModelDelegate;
+    MKCTodoViewModel *mockTodoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
+    mockTodoViewModel.delegate = mockTodoViewModelDelegate;
     [mockTodoViewModelDelegate setExpectationOrderMatters:YES];
     
     // 以下 delegate function 不會被執行
@@ -141,7 +141,7 @@
     OCMExpect([mockTodoViewModelDelegate updateLoadingState]);
     
     MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
-    todoViewController.todoViewModel = todoViewModel;
+    todoViewController.todoViewModel = mockTodoViewModel;
     [todoViewController view];
     OCMVerifyAll(mockTodoViewModelDelegate);
     
@@ -154,8 +154,8 @@
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:OCMOCK_ANY failureHandler:([OCMArg invokeBlockWithArgs:error, nil])]);
     
     id mockTodoViewModelDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
-    MKCTodoViewModel *todoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
-    todoViewModel.delegate = mockTodoViewModelDelegate;
+    MKCTodoViewModel *mockTodoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
+    mockTodoViewModel.delegate = mockTodoViewModelDelegate;
     [mockTodoViewModelDelegate setExpectationOrderMatters:YES];
     
     // 以下 delegate function 會被執行
@@ -163,7 +163,7 @@
     OCMExpect([mockTodoViewModelDelegate showErrorMessageWithError:OCMOCK_ANY]);
     
     MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
-    todoViewController.todoViewModel = todoViewModel;
+    todoViewController.todoViewModel = mockTodoViewModel;
     [todoViewController view];
     OCMVerifyAll(mockTodoViewModelDelegate);
     
