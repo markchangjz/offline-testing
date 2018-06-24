@@ -135,17 +135,31 @@
 }
 
 - (void)testSwitchToFinishUiState {
-    id mockDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *filePath = [bundle pathForResource:@"todos" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSArray *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
+    
+    id mockTodoViewModelDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
     MKCTodoViewModel *todoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
-    todoViewModel.delegate = mockDelegate;
+    todoViewModel.delegate = mockTodoViewModelDelegate;
+    [mockTodoViewModelDelegate setExpectationOrderMatters:YES];
     
     // 以下 delegate function 不會被執行
-    OCMReject([mockDelegate showErrorMessageWithError:OCMOCK_ANY]);
-    
-    todoViewModel.currentUiState = UIStateFinish;
+    OCMReject([mockTodoViewModelDelegate showErrorMessageWithError:OCMOCK_ANY]);
     
     // 以下 delegate function 會被執行
-    OCMVerify([mockDelegate updateLoadingState]);
+    OCMExpect([mockTodoViewModelDelegate updateLoadingState]);
+    
+    MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
+    todoViewController.todoViewModel = todoViewModel;
+    [todoViewController view];
+    OCMVerifyAll(mockTodoViewModelDelegate);
+    
+    XCTAssertEqual(todoViewController.todoViewModel.currentUiState, UIStateFinish);
 }
 
 - (void)testSwitchToErrorUiState {
