@@ -2,6 +2,13 @@
 #import <OCMock/OCMock.h>
 #import "MKCApiService.h"
 #import "MKCTodoViewModel.h"
+#import "MKCTodoViewController.h"
+
+@interface MKCTodoViewController (UnitTest)
+
+@property (strong, nonatomic) MKCTodoViewModel *todoViewModel;
+
+@end
 
 @interface MKCTodoViewModelTests : XCTestCase
 
@@ -111,7 +118,7 @@
     OCMVerifyAll(mockTodoViewModel);
 }
 
-#pragma mark - 切換不同 UI 狀態，確認 delegate 是否有正確執行
+#pragma mark - 切換不同 UI 狀態，確認 delegate function 是否有正確執行
 
 - (void)testSwitchToLoadingUiState {
     id mockDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
@@ -142,16 +149,25 @@
 }
 
 - (void)testSwitchToErrorUiState {
-    id mockDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
+    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    NSError *error = [NSError errorWithDomain:@"test.error" code:123 userInfo:@{}];
+    OCMStub([mockApiService fetchTodoListWithSuccessHandler:OCMOCK_ANY failureHandler:([OCMArg invokeBlockWithArgs:error, nil])]);
+    
+    id mockTodoViewModelDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
     MKCTodoViewModel *todoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
-    todoViewModel.delegate = mockDelegate;
-    [mockDelegate setExpectationOrderMatters:YES];
+    todoViewModel.delegate = mockTodoViewModelDelegate;
+    [mockTodoViewModelDelegate setExpectationOrderMatters:YES];
     
     // 以下 delegate function 會被執行
-    OCMExpect([mockDelegate updateLoadingState]);
-    OCMExpect([mockDelegate showErrorMessageWithError:OCMOCK_ANY]);
+    OCMExpect([mockTodoViewModelDelegate updateLoadingState]);
+    OCMExpect([mockTodoViewModelDelegate showErrorMessageWithError:OCMOCK_ANY]);
     
-    todoViewModel.currentUiState = UIStateError;
+    MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
+    todoViewController.todoViewModel = todoViewModel;
+    [todoViewController view];
+    OCMVerifyAll(mockTodoViewModelDelegate);
+    
+    XCTAssertEqual(todoViewController.todoViewModel.currentUiState, UIStateError);
 }
 
 @end
