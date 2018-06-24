@@ -85,6 +85,7 @@
     OCMExpect([mockTodoViewModel setCurrentUiState:UIStateFinish]);
     
     [mockTodoViewModel fetchData];
+    OCMVerifyAll(mockTodoViewModel);
     
     MKCTodoCellViewModel *firstTodoCellViewModel = [mockTodoViewModel cellViewModelAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     XCTAssertEqualObjects(firstTodoCellViewModel.title, @"mock test 1");
@@ -107,6 +108,7 @@
     OCMExpect([mockTodoViewModel setCurrentUiState:UIStateError]);
 
     [mockTodoViewModel fetchData];
+    OCMVerifyAll(mockTodoViewModel);
 }
 
 #pragma mark - 切換不同 UI 狀態，確認 delegate 是否有正確執行
