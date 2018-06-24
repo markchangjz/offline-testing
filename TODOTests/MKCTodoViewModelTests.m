@@ -120,20 +120,6 @@
 
 #pragma mark - 切換不同 UI 狀態，確認 delegate function 是否有正確執行
 
-- (void)testSwitchToLoadingUiState {
-    id mockDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
-    MKCTodoViewModel *todoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
-    todoViewModel.delegate = mockDelegate;
-    
-    // 以下 delegate function 不會被執行
-    OCMReject([mockDelegate showErrorMessageWithError:OCMOCK_ANY]);
-    
-    todoViewModel.currentUiState = UIStateLoading;
-    
-    // 以下 delegate function 會被執行
-    OCMVerify([mockDelegate updateLoadingState]);
-}
-
 - (void)testSwitchToFinishUiState {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *filePath = [bundle pathForResource:@"todos" ofType:@"json"];
