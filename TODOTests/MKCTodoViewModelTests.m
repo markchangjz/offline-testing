@@ -132,7 +132,6 @@
     id mockTodoViewModelDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
     MKCTodoViewModel *mockTodoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
     mockTodoViewModel.delegate = mockTodoViewModelDelegate;
-    [mockTodoViewModelDelegate setExpectationOrderMatters:YES];
     
     // 以下 delegate function 不會被執行
     OCMReject([mockTodoViewModelDelegate showErrorMessageWithError:OCMOCK_ANY]);
@@ -156,7 +155,6 @@
     id mockTodoViewModelDelegate = OCMProtocolMock(@protocol(MKCTodoViewModelDelegate));
     MKCTodoViewModel *mockTodoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
     mockTodoViewModel.delegate = mockTodoViewModelDelegate;
-    [mockTodoViewModelDelegate setExpectationOrderMatters:YES];
     
     // 以下 delegate function 會被執行
     OCMExpect([mockTodoViewModelDelegate updateLoadingState]);
