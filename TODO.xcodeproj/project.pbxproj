@@ -16,6 +16,7 @@
 		0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */; };
 		0D4E641720D3F1BD009FC4FE /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1852220D3EDCC00A10055 /* libOCMock.a */; };
 		0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */; };
+		0D891ABB20E4BECC006FBA8E /* MKCApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */; };
 		0D94655B20C2BF36003108A8 /* todos.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D94655A20C2BF36003108A8 /* todos.json */; };
 		0DBFA6ED20B0537B00B1C724 /* TODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFA6EC20B0537B00B1C724 /* TODOUITests.swift */; };
 		0DBFA70920B053E300B1C724 /* MKCTodoViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFA70820B053E300B1C724 /* MKCTodoViewModelTests.m */; };
@@ -54,6 +55,8 @@
 		0D2B45D720B002AB00CCD09F /* MKCTodoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCTodoViewModel.h; sourceTree = "<group>"; };
 		0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCTodoViewModel.m; sourceTree = "<group>"; };
 		0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiServiceTests.m; sourceTree = "<group>"; };
+		0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODOTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCApiServiceTests.swift; sourceTree = "<group>"; };
 		0D94655A20C2BF36003108A8 /* todos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = todos.json; path = WireMock/__files/todos.json; sourceTree = SOURCE_ROOT; };
 		0DB1851820D3EDCB00A10055 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		0DB1851920D3EDCB00A10055 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
@@ -229,11 +232,13 @@
 		0DBFA70720B053E300B1C724 /* TODOTests */ = {
 			isa = PBXGroup;
 			children = (
+				0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */,
 				0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */,
 				0DBFA70820B053E300B1C724 /* MKCTodoViewModelTests.m */,
 				0DD4EAA520C2840000EC4491 /* MKCTodoViewControllerTests.m */,
 				0D94655A20C2BF36003108A8 /* todos.json */,
 				0DBFA70A20B053E300B1C724 /* Info.plist */,
+				0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */,
 			);
 			path = TODOTests;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 					};
 					0DBFA70520B053E300B1C724 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 0D2B45B720AFFABE00CCD09F;
 					};
 				};
@@ -411,6 +417,7 @@
 			files = (
 				0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */,
 				0DBFA70920B053E300B1C724 /* MKCTodoViewModelTests.m in Sources */,
+				0D891ABB20E4BECC006FBA8E /* MKCApiServiceTests.swift in Sources */,
 				0DD4EAA620C2840000EC4491 /* MKCTodoViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +649,7 @@
 			baseConfigurationReference = 0DBFA71620B12F8400B1C724 /* Debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -663,6 +671,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TODOTests/TODOTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TODO.app/TODO";
 			};
@@ -673,6 +684,7 @@
 			baseConfigurationReference = 0DBFA71720B12FA300B1C724 /* Release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -694,6 +706,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TODOTests/TODOTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TODO.app/TODO";
 			};
@@ -804,6 +818,7 @@
 			baseConfigurationReference = 0DBFA71820B12FAF00B1C724 /* Tests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -825,6 +840,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TODOTests/TODOTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TODO.app/TODO";
 			};
