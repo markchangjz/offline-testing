@@ -57,7 +57,7 @@
 		0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiServiceTests.m; sourceTree = "<group>"; };
 		0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODOTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCApiServiceTests.swift; sourceTree = "<group>"; };
-		0D94655A20C2BF36003108A8 /* todos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = todos.json; path = WireMock/__files/todos.json; sourceTree = SOURCE_ROOT; };
+		0D94655A20C2BF36003108A8 /* todos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = todos.json; path = "TODOTests/API response data/todos.json"; sourceTree = SOURCE_ROOT; };
 		0DB1851820D3EDCB00A10055 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		0DB1851920D3EDCB00A10055 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
 		0DB1851A20D3EDCB00A10055 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
@@ -220,6 +220,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0DBC2D2A20E4CEF9009A3991 /* API response data */ = {
+			isa = PBXGroup;
+			children = (
+				0D94655A20C2BF36003108A8 /* todos.json */,
+			);
+			path = "API response data";
+			sourceTree = "<group>";
+		};
 		0DBFA6EB20B0537B00B1C724 /* TODOUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,11 +240,11 @@
 		0DBFA70720B053E300B1C724 /* TODOTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DBC2D2A20E4CEF9009A3991 /* API response data */,
 				0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */,
 				0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */,
 				0DBFA70820B053E300B1C724 /* MKCTodoViewModelTests.m */,
 				0DD4EAA520C2840000EC4491 /* MKCTodoViewControllerTests.m */,
-				0D94655A20C2BF36003108A8 /* todos.json */,
 				0DBFA70A20B053E300B1C724 /* Info.plist */,
 				0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */,
 			);
