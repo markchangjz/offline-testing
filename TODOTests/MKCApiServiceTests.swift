@@ -20,9 +20,11 @@ class MKCApiServiceTests: XCTestCase {
     }
     
     func testFetchTodoListApi() {
-        let wait = expectation(description: "wait")
+        let expect = expectation(description: "wait")
 
         MKCApiService.sharedApi().fetchTodoList(successHandler: { (response, responseObject) in
+            
+            expect.fulfill()
     
             do {                
                 let data = try JSONSerialization.data(withJSONObject: responseObject!, options: .prettyPrinted)
@@ -38,8 +40,6 @@ class MKCApiServiceTests: XCTestCase {
             } catch {
                 XCTFail("error \(String(describing: error))")
             }
-            
-            wait.fulfill()
         }) { (error) in
             XCTFail("error \(String(describing: error))")
         }

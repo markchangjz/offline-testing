@@ -22,13 +22,14 @@
     
     [[MKCApiService sharedApi] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
         
+        [expectation fulfill];
+        
         XCTAssertGreaterThan([responseObject count], 0);
         XCTAssertNotNil(responseObject[0][@"userId"]);
         XCTAssertNotNil(responseObject[0][@"id"]);
         XCTAssertNotNil(responseObject[0][@"title"]);
         XCTAssertNotNil(responseObject[0][@"completed"]);
         
-        [expectation fulfill];
     } failureHandler:^(NSError *error) {
         XCTFail(@"error %@", error);
     }];
