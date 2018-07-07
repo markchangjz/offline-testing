@@ -47,7 +47,7 @@
     // Act - 載入畫面
     MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
     [todoViewController view];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.0]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate date]];
  
     // Assert - 驗證畫面狀態，及資料數量
     XCTAssertEqual(todoViewController.tableView.alpha, 1.0);
@@ -70,7 +70,7 @@
     
     // Act - 載入畫面
     [todoViewController view];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.0]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate date]];
     
     // Assert - 驗證畫面狀態，及資料數量
     XCTAssertEqual(todoViewController.tableView.alpha, 0.0);
@@ -90,7 +90,7 @@
     // Act - 載入畫面
     MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
     [todoViewController view];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.0]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate date]];
     
     // Assert - 驗證畫面狀態，及資料數量
     XCTAssertEqual(todoViewController.tableView.alpha, 0.0);
@@ -145,7 +145,7 @@
     // Act - 載入畫面
     MKCTodoViewController *todoViewController = [[MKCTodoViewController alloc] init];
     [todoViewController view];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.0]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate date]];
     
     // Assert - 驗證畫面狀態，及資料數量
     XCTAssertEqual(todoViewController.tableView.alpha, 1.0);
