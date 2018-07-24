@@ -98,6 +98,8 @@
     OCMVerifyAll(mockTodoViewModel);
     
     // Assert - 驗證 UI 顯示資料
+    XCTAssertEqual([mockTodoViewModel numberOfCells], 5);
+    
     MKCTodoCellViewModel *firstTodoCellViewModel = [mockTodoViewModel cellViewModelAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     XCTAssertEqualObjects(firstTodoCellViewModel.title, @"mock test 1");
     XCTAssertFalse(firstTodoCellViewModel.completed);
