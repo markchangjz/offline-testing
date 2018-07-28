@@ -16,6 +16,7 @@
 		0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */; };
 		0D4E641720D3F1BD009FC4FE /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1852220D3EDCC00A10055 /* libOCMock.a */; };
 		0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */; };
+		0D83E746210C97D6001EF20B /* MKCTodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */; };
 		0D891ABB20E4BECC006FBA8E /* MKCApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */; };
 		0D94655B20C2BF36003108A8 /* todos.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D94655A20C2BF36003108A8 /* todos.json */; };
 		0DBFA6ED20B0537B00B1C724 /* TODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFA6EC20B0537B00B1C724 /* TODOUITests.swift */; };
@@ -55,6 +56,8 @@
 		0D2B45D720B002AB00CCD09F /* MKCTodoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCTodoViewModel.h; sourceTree = "<group>"; };
 		0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCTodoViewModel.m; sourceTree = "<group>"; };
 		0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiServiceTests.m; sourceTree = "<group>"; };
+		0D83E744210C97D5001EF20B /* TODO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODO-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCTodoDetailViewController.swift; sourceTree = "<group>"; };
 		0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODOTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCApiServiceTests.swift; sourceTree = "<group>"; };
 		0D94655A20C2BF36003108A8 /* todos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = todos.json; path = "TODOTests/API response data/todos.json"; sourceTree = SOURCE_ROOT; };
@@ -138,6 +141,7 @@
 				0DBFA71120B0555B00B1C724 /* Todo List */,
 				0D2B45C420AFFAC100CCD09F /* Assets.xcassets */,
 				0D2B45C620AFFAC100CCD09F /* LaunchScreen.storyboard */,
+				0D83E744210C97D5001EF20B /* TODO-Bridging-Header.h */,
 				0D2B45C920AFFAC100CCD09F /* Info.plist */,
 				0D2B45CA20AFFAC100CCD09F /* main.m */,
 				0D94444320B149F700C0E310 /* config */,
@@ -267,6 +271,7 @@
 				0D2B45D220AFFB4700CCD09F /* MKCTodoViewController.m */,
 				0D2B45D720B002AB00CCD09F /* MKCTodoViewModel.h */,
 				0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */,
+				0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */,
 			);
 			path = "Todo List";
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				TargetAttributes = {
 					0D2B45B720AFFABE00CCD09F = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0940;
 					};
 					0DBFA6E920B0537B00B1C724 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -404,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2B45D320AFFB4700CCD09F /* MKCTodoViewController.m in Sources */,
+				0D83E746210C97D6001EF20B /* MKCTodoDetailViewController.swift in Sources */,
 				0D2B45CB20AFFAC100CCD09F /* main.m in Sources */,
 				0D2B45D620AFFDB500CCD09F /* MKCApiService.m in Sources */,
 				0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */,
@@ -575,6 +582,7 @@
 			baseConfigurationReference = 0DBFA71620B12F8400B1C724 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				INFOPLIST_FILE = TODO/Info.plist;
@@ -584,6 +592,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TODO/TODO-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -593,6 +604,7 @@
 			baseConfigurationReference = 0DBFA71720B12FA300B1C724 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				INFOPLIST_FILE = TODO/Info.plist;
@@ -602,6 +614,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TODO/TODO-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -610,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DBFA71620B12F8400B1C724 /* Debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				INFOPLIST_FILE = TODOUITests/Info.plist;
@@ -633,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DBFA71720B12FA300B1C724 /* Release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				INFOPLIST_FILE = TODOUITests/Info.plist;
@@ -656,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DBFA71620B12F8400B1C724 /* Debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -691,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DBFA71720B12FA300B1C724 /* Release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -785,6 +803,7 @@
 			baseConfigurationReference = 0DBFA71820B12FAF00B1C724 /* Tests.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				INFOPLIST_FILE = TODO/Info.plist;
@@ -794,6 +813,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.markchang.TODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TODO/TODO-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Tests;
@@ -802,6 +824,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DBFA71820B12FAF00B1C724 /* Tests.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y53W55T72H;
 				INFOPLIST_FILE = TODOUITests/Info.plist;
@@ -825,6 +848,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DBFA71820B12FAF00B1C724 /* Tests.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

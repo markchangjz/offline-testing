@@ -169,9 +169,20 @@
  點選 table view 的 cell 後，cell 會顯示取消選取動畫
  */
 - (void)testTapTableViewCell {
-    // Arrange - 模擬 table view
-    id mockTableView = OCMPartialMock([[MKCTodoViewController alloc] init].tableView);
+    // Arrange - 讀取本機 JSON file，模擬 API 回傳資料
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *filePath = [bundle pathForResource:@"todos" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSArray *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
+    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
+    
+    // Arrange - 模擬 table view
+    id mockTodoViewController = OCMPartialMock([[MKCTodoViewController alloc] init]);
+    id mockTableView = OCMPartialMock([mockTodoViewController tableView]);
+    [mockTodoViewController view];
+
     // Act - 模擬使用者點選 table view 的 cell
     NSIndexPath *selectIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [[mockTableView delegate] tableView:mockTableView didSelectRowAtIndexPath:selectIndexPath];

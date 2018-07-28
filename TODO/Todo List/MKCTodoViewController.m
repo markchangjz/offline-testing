@@ -1,5 +1,6 @@
 #import "MKCTodoViewController.h"
 #import "MKCTodoViewModel.h"
+#import "TODO-Swift.h"
 
 @interface MKCTodoViewController () <UITableViewDelegate, UITableViewDataSource, MKCTodoViewModelDelegate>
 
@@ -49,6 +50,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    MKCTodoDetailViewController *todoDetailViewController = [[MKCTodoDetailViewController alloc] init];
+    todoDetailViewController.todoTitle = [self.todoViewModel cellViewModelAtIndexPath:indexPath].title;
+    [self.navigationController pushViewController:todoDetailViewController animated:YES];
 }
 
 #pragma mark - private function
