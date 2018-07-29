@@ -4,7 +4,7 @@ class MKCTodoDetailViewController: UIViewController {
     
     var todoTitle: String?
 
-    private lazy var todoLabel: UILabel = {
+    lazy var todoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0

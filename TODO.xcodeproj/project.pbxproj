@@ -17,6 +17,7 @@
 		0D4E641720D3F1BD009FC4FE /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1852220D3EDCC00A10055 /* libOCMock.a */; };
 		0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */; };
 		0D83E746210C97D6001EF20B /* MKCTodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */; };
+		0D83E74A210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D83E749210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift */; };
 		0D891ABB20E4BECC006FBA8E /* MKCApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */; };
 		0D94655B20C2BF36003108A8 /* todos.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D94655A20C2BF36003108A8 /* todos.json */; };
 		0DBFA6ED20B0537B00B1C724 /* TODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFA6EC20B0537B00B1C724 /* TODOUITests.swift */; };
@@ -58,6 +59,7 @@
 		0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiServiceTests.m; sourceTree = "<group>"; };
 		0D83E744210C97D5001EF20B /* TODO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODO-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCTodoDetailViewController.swift; sourceTree = "<group>"; };
+		0D83E749210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCTodoDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODOTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCApiServiceTests.swift; sourceTree = "<group>"; };
 		0D94655A20C2BF36003108A8 /* todos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = todos.json; path = "TODOTests/API response data/todos.json"; sourceTree = SOURCE_ROOT; };
@@ -249,6 +251,7 @@
 				0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */,
 				0DBFA70820B053E300B1C724 /* MKCTodoViewModelTests.m */,
 				0DD4EAA520C2840000EC4491 /* MKCTodoViewControllerTests.m */,
+				0D83E749210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift */,
 				0DBFA70A20B053E300B1C724 /* Info.plist */,
 				0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */,
 			);
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D83E74A210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift in Sources */,
 				0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */,
 				0DBFA70920B053E300B1C724 /* MKCTodoViewModelTests.m in Sources */,
 				0D891ABB20E4BECC006FBA8E /* MKCApiServiceTests.swift in Sources */,
