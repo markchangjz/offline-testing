@@ -1,8 +1,8 @@
 import UIKit
 
-class MKCTodoDetailViewController: UIViewController {
+@objc class MKCTodoDetailViewController: UIViewController {
     
-    var todoTitle: String?
+    @objc var todoTitle: String?
 
     lazy var todoLabel: UILabel = {
         let label = UILabel()
