@@ -14,11 +14,8 @@ class MKCTodoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Detail"
-        self.view.backgroundColor = UIColor.white
         
-        self.in_configureTodoLabelView()
+        self.in_configureView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +23,12 @@ class MKCTodoDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    private func in_configureTodoLabelView() {
+    private func in_configureView() {
+        self.title = "Detail"
+        self.view.backgroundColor = UIColor.white
+        
         todoLabel.text = todoTitle
         todoLabel.sizeToFit()
-        
         self.view.addSubview(todoLabel)
         todoLabel.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
         todoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
