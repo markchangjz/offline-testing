@@ -18,7 +18,7 @@
     
     NSURLSessionDataTask *dataTask =
     [[MKCApiService sharedApi] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
-        [self in_processFetchedTodoWith:responseObject];
+        [self in_processFetchedTodoWithResponseObject:responseObject];
     } failureHandler:^(NSError *error) {
         [self.delegate showErrorMessageWithError:error];
         self.currentUiState = UIStateError;
@@ -37,7 +37,7 @@
 
 #pragma mark - private function
 
-- (void)in_processFetchedTodoWith:(NSArray *)responseObject {
+- (void)in_processFetchedTodoWithResponseObject:(NSArray *)responseObject {
     __block BOOL isInvalidResponseObject = NO;
     
     if (![responseObject isKindOfClass:[NSArray class]]) {
