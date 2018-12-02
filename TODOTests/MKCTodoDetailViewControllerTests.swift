@@ -14,7 +14,7 @@ class MKCTodoDetailViewControllerTests: XCTestCase {
     }
     
     func testSetTodoTitle() {
-        let todoDetailViewController = MKCTodoDetailViewController()
+        let todoDetailViewController = TodoDetailViewController()
         todoDetailViewController.todoTitle = "test title"
         _ = todoDetailViewController.view
         

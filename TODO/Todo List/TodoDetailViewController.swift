@@ -1,6 +1,7 @@
 import UIKit
 
-@objc class MKCTodoDetailViewController: UIViewController {
+@objc(MKCTodoDetailViewController)
+class TodoDetailViewController: UIViewController {
     
     @objc var todoTitle: String?
 

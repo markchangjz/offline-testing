@@ -16,7 +16,7 @@
 		0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */; };
 		0D4E641720D3F1BD009FC4FE /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1852220D3EDCC00A10055 /* libOCMock.a */; };
 		0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */; };
-		0D83E746210C97D6001EF20B /* MKCTodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */; };
+		0D83E746210C97D6001EF20B /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D83E745210C97D6001EF20B /* TodoDetailViewController.swift */; };
 		0D83E74A210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D83E749210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift */; };
 		0D891ABB20E4BECC006FBA8E /* MKCApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */; };
 		0D94655B20C2BF36003108A8 /* todos.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D94655A20C2BF36003108A8 /* todos.json */; };
@@ -58,7 +58,7 @@
 		0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCTodoViewModel.m; sourceTree = "<group>"; };
 		0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiServiceTests.m; sourceTree = "<group>"; };
 		0D83E744210C97D5001EF20B /* TODO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODO-Bridging-Header.h"; sourceTree = "<group>"; };
-		0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCTodoDetailViewController.swift; sourceTree = "<group>"; };
+		0D83E745210C97D6001EF20B /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
 		0D83E749210D8DB2001EF20B /* MKCTodoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCTodoDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		0D891AB920E4BECC006FBA8E /* TODOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TODOTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D891ABA20E4BECC006FBA8E /* MKCApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCApiServiceTests.swift; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 				0D2B45D220AFFB4700CCD09F /* MKCTodoViewController.m */,
 				0D2B45D720B002AB00CCD09F /* MKCTodoViewModel.h */,
 				0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */,
-				0D83E745210C97D6001EF20B /* MKCTodoDetailViewController.swift */,
+				0D83E745210C97D6001EF20B /* TodoDetailViewController.swift */,
 			);
 			path = "Todo List";
 			sourceTree = "<group>";
@@ -414,7 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2B45D320AFFB4700CCD09F /* MKCTodoViewController.m in Sources */,
-				0D83E746210C97D6001EF20B /* MKCTodoDetailViewController.swift in Sources */,
+				0D83E746210C97D6001EF20B /* TodoDetailViewController.swift in Sources */,
 				0D2B45CB20AFFAC100CCD09F /* main.m in Sources */,
 				0D2B45D620AFFDB500CCD09F /* MKCApiService.m in Sources */,
 				0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */,
