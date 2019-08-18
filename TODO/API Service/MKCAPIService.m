@@ -17,7 +17,7 @@
     return instance;
 }
 
-- (NSURLSessionDataTask *)fetchTodoListWithSuccessHandler:(ApiSuccessHandler)successHandler failureHandler:(ApiFailureHandler)failureHandler {
+- (NSURLSessionDataTask *)fetchTodoListWithSuccessHandler:(MKCAPISuccessHandler)successHandler failureHandler:(MKCAPIFailureHandler)failureHandler {
     NSString *urlString = [NSString stringWithFormat:@"%@/todos", self.apiHost];
     NSURL *url = [NSURL URLWithString:urlString];
     
