@@ -22,7 +22,7 @@ class MKCApiServiceTests: XCTestCase {
     func testFetchTodoListApi() {
         let expect = expectation(description: "wait")
 
-        MKCAPIService.sharedAPI().fetchTodoList(successHandler: { (response, responseObject) in
+        MKCApiService.sharedApi().fetchTodoList(successHandler: { (response, responseObject) in
             
             expect.fulfill()
     

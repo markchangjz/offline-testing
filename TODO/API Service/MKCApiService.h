@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 
-typedef void (^APISuccessHandler)(NSURLResponse *response, id responseObject);
-typedef void (^APIFailureHandler)(NSError *error);
+typedef void (^ApiSuccessHandler)(NSURLResponse *response, id responseObject);
+typedef void (^ApiFailureHandler)(NSError *error);
 
-@interface MKCAPIService : NSObject
+@interface MKCApiService : NSObject
 
-+ (instancetype)sharedAPI;
++ (instancetype)sharedApi;
 
-- (NSURLSessionDataTask *)fetchTodoListWithSuccessHandler:(APISuccessHandler)successHandler failureHandler:(APIFailureHandler)failureHandler;
+- (NSURLSessionDataTask *)fetchTodoListWithSuccessHandler:(ApiSuccessHandler)successHandler failureHandler:(ApiFailureHandler)failureHandler;
 
 @end

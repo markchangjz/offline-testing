@@ -1,5 +1,5 @@
 #import "MKCTodoViewModel.h"
-#import "MKCAPIService.h"
+#import "MKCApiService.h"
 #import <UIKit/UIKit.h>
 
 @implementation MKCTodoCellViewModel
@@ -17,7 +17,7 @@
     self.currentUiState = UIStateLoading;
     
     NSURLSessionDataTask *dataTask =
-    [[MKCAPIService sharedAPI] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
+    [[MKCApiService sharedApi] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
         [self in_processFetchedTodoWithResponseObject:responseObject];
     } failureHandler:^(NSError *error) {
         [self.delegate showErrorMessageWithError:error];

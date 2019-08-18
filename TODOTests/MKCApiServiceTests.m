@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "MKCAPIService.h"
+#import "MKCApiService.h"
 
 @interface MKCApiServiceTests : XCTestCase
 
@@ -20,7 +20,7 @@
 - (void)testFetchTodoListApi {
     XCTestExpectation *expectation = [self expectationWithDescription:@"wait"];
     
-    [[MKCAPIService sharedAPI] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
+    [[MKCApiService sharedApi] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
         
         [expectation fulfill];
         
