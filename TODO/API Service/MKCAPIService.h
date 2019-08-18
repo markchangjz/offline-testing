@@ -5,7 +5,7 @@ typedef void (^ApiFailureHandler)(NSError *error);
 
 @interface MKCAPIService : NSObject
 
-+ (instancetype)sharedApi;
++ (instancetype)sharedAPI;
 
 - (NSURLSessionDataTask *)fetchTodoListWithSuccessHandler:(ApiSuccessHandler)successHandler failureHandler:(ApiFailureHandler)failureHandler;
 

@@ -20,7 +20,7 @@
 - (void)testFetchTodoListApi {
     XCTestExpectation *expectation = [self expectationWithDescription:@"wait"];
     
-    [[MKCAPIService sharedApi] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
+    [[MKCAPIService sharedAPI] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
         
         [expectation fulfill];
         

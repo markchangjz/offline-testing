@@ -8,7 +8,7 @@
 
 @implementation MKCAPIService
 
-+ (instancetype)sharedApi {
++ (instancetype)sharedAPI {
     static MKCAPIService *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

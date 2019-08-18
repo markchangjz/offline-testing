@@ -17,7 +17,7 @@
     self.currentUiState = UIStateLoading;
     
     NSURLSessionDataTask *dataTask =
-    [[MKCAPIService sharedApi] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
+    [[MKCAPIService sharedAPI] fetchTodoListWithSuccessHandler:^(NSURLResponse *response, id responseObject) {
         [self in_processFetchedTodoWithResponseObject:responseObject];
     } failureHandler:^(NSError *error) {
         [self.delegate showErrorMessageWithError:error];
