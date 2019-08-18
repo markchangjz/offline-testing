@@ -1,18 +1,18 @@
-#import "MKCApiService.h"
+#import "MKCAPIService.h"
 
-@interface MKCApiService()
+@interface MKCAPIService()
 
 @property (copy, nonatomic) NSString *apiHost;
 
 @end
 
-@implementation MKCApiService
+@implementation MKCAPIService
 
 + (instancetype)sharedApi {
-    static MKCApiService *instance = nil;
+    static MKCAPIService *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[MKCApiService alloc] init];
+        instance = [[MKCAPIService alloc] init];
     });
     return instance;
 }

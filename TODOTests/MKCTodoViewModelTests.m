@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import "MKCApiService.h"
+#import "MKCAPIService.h"
 #import "MKCTodoViewModel.h"
 #import "MKCTodoViewController.h"
 
@@ -31,7 +31,7 @@
 - (void)testApiResponseInvalidData {
     // Arrange - Stub API 回傳異常資料
     id invalidResponseObject = @[@"a", @"b", @"c"];
-    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    id mockApiService = OCMPartialMock([MKCAPIService sharedApi]);
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, invalidResponseObject, nil]) failureHandler:OCMOCK_ANY]);
     
     // Act - 呼叫 API
@@ -45,7 +45,7 @@
 - (void)testApiResponseInvalidDataType {
     // Arrange - Stub API 回傳異常資料
     id invalidResponseObject = @{@"a": @"b", @"c": @"d"};
-    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    id mockApiService = OCMPartialMock([MKCAPIService sharedApi]);
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, invalidResponseObject, nil]) failureHandler:OCMOCK_ANY]);
     
     // Act - 呼叫 API
@@ -59,7 +59,7 @@
 - (void)testApiResponseInvalidEmptyKeyData {
     // Arrange - Stub API 回傳異常資料
     id invalidResponseObject = @[@{@"title": @"test"}];
-    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    id mockApiService = OCMPartialMock([MKCAPIService sharedApi]);
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, invalidResponseObject, nil]) failureHandler:OCMOCK_ANY]);
     
     // Act - 呼叫 API
@@ -79,7 +79,7 @@
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSArray *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    id mockApiService = OCMPartialMock([MKCAPIService sharedApi]);
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
     
     id mockTodoViewModel = OCMPartialMock([[MKCTodoViewModel alloc] init]);
@@ -107,7 +107,7 @@
 
 - (void)testFetchingDataOccursError {
     // Arrange - 模擬呼叫 API 錯誤
-    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    id mockApiService = OCMPartialMock([MKCAPIService sharedApi]);
     NSError *error = [NSError errorWithDomain:@"test.error" code:123 userInfo:@{}];
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:OCMOCK_ANY failureHandler:([OCMArg invokeBlockWithArgs:error, nil])]);
 
@@ -136,7 +136,7 @@
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSArray *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    id mockApiService = OCMPartialMock([MKCAPIService sharedApi]);
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:([OCMArg invokeBlockWithArgs:OCMOCK_ANY, responseObject, nil]) failureHandler:OCMOCK_ANY]);
     
     // Arrange - Mock ViewModelDelegate，來驗證 delegate function 是否有正確執行
@@ -161,7 +161,7 @@
 
 - (void)testSwitchToErrorUiState {
     // Arrange - 模擬呼叫 API 錯誤
-    id mockApiService = OCMPartialMock([MKCApiService sharedApi]);
+    id mockApiService = OCMPartialMock([MKCAPIService sharedApi]);
     NSError *error = [NSError errorWithDomain:@"test.error" code:123 userInfo:@{}];
     OCMStub([mockApiService fetchTodoListWithSuccessHandler:OCMOCK_ANY failureHandler:([OCMArg invokeBlockWithArgs:error, nil])]);
     

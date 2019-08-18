@@ -3,7 +3,7 @@
 typedef void (^ApiSuccessHandler)(NSURLResponse *response, id responseObject);
 typedef void (^ApiFailureHandler)(NSError *error);
 
-@interface MKCApiService : NSObject
+@interface MKCAPIService : NSObject
 
 + (instancetype)sharedApi;
 
