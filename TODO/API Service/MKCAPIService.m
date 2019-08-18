@@ -1,23 +1,23 @@
-#import "MKCApiService.h"
+#import "MKCAPIService.h"
 
-@interface MKCApiService()
+@interface MKCAPIService()
 
 @property (copy, nonatomic) NSString *apiHost;
 
 @end
 
-@implementation MKCApiService
+@implementation MKCAPIService
 
-+ (instancetype)sharedApi {
-    static MKCApiService *instance = nil;
++ (instancetype)sharedAPI {
+    static MKCAPIService *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[MKCApiService alloc] init];
+        instance = [[MKCAPIService alloc] init];
     });
     return instance;
 }
 
-- (NSURLSessionDataTask *)fetchTodoListWithSuccessHandler:(ApiSuccessHandler)successHandler failureHandler:(ApiFailureHandler)failureHandler {
+- (NSURLSessionDataTask *)fetchTodoListWithSuccessHandler:(APISuccessHandler)successHandler failureHandler:(APIFailureHandler)failureHandler {
     NSString *urlString = [NSString stringWithFormat:@"%@/todos", self.apiHost];
     NSURL *url = [NSURL URLWithString:urlString];
     

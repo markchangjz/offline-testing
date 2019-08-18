@@ -12,7 +12,7 @@
 		0D2B45C820AFFAC100CCD09F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B45C620AFFAC100CCD09F /* LaunchScreen.storyboard */; };
 		0D2B45CB20AFFAC100CCD09F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45CA20AFFAC100CCD09F /* main.m */; };
 		0D2B45D320AFFB4700CCD09F /* MKCTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D220AFFB4700CCD09F /* MKCTodoViewController.m */; };
-		0D2B45D620AFFDB500CCD09F /* MKCApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D520AFFDB500CCD09F /* MKCApiService.m */; };
+		0D2B45D620AFFDB500CCD09F /* MKCAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D520AFFDB500CCD09F /* MKCAPIService.m */; };
 		0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */; };
 		0D4E641720D3F1BD009FC4FE /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1852220D3EDCC00A10055 /* libOCMock.a */; };
 		0D676E6620C2665200D6FA29 /* MKCApiServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */; };
@@ -52,8 +52,8 @@
 		0D2B45CA20AFFAC100CCD09F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D2B45D120AFFB4700CCD09F /* MKCTodoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCTodoViewController.h; sourceTree = "<group>"; };
 		0D2B45D220AFFB4700CCD09F /* MKCTodoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCTodoViewController.m; sourceTree = "<group>"; };
-		0D2B45D420AFFDB500CCD09F /* MKCApiService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCApiService.h; sourceTree = "<group>"; };
-		0D2B45D520AFFDB500CCD09F /* MKCApiService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiService.m; sourceTree = "<group>"; };
+		0D2B45D420AFFDB500CCD09F /* MKCAPIService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCAPIService.h; sourceTree = "<group>"; };
+		0D2B45D520AFFDB500CCD09F /* MKCAPIService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCAPIService.m; sourceTree = "<group>"; };
 		0D2B45D720B002AB00CCD09F /* MKCTodoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCTodoViewModel.h; sourceTree = "<group>"; };
 		0D2B45D820B002AB00CCD09F /* MKCTodoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCTodoViewModel.m; sourceTree = "<group>"; };
 		0D676E6520C2665200D6FA29 /* MKCApiServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCApiServiceTests.m; sourceTree = "<group>"; };
@@ -261,8 +261,8 @@
 		0DBFA71020B0553700B1C724 /* API Service */ = {
 			isa = PBXGroup;
 			children = (
-				0D2B45D420AFFDB500CCD09F /* MKCApiService.h */,
-				0D2B45D520AFFDB500CCD09F /* MKCApiService.m */,
+				0D2B45D420AFFDB500CCD09F /* MKCAPIService.h */,
+				0D2B45D520AFFDB500CCD09F /* MKCAPIService.m */,
 			);
 			path = "API Service";
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 				0D2B45D320AFFB4700CCD09F /* MKCTodoViewController.m in Sources */,
 				0D83E746210C97D6001EF20B /* TodoDetailViewController.swift in Sources */,
 				0D2B45CB20AFFAC100CCD09F /* main.m in Sources */,
-				0D2B45D620AFFDB500CCD09F /* MKCApiService.m in Sources */,
+				0D2B45D620AFFDB500CCD09F /* MKCAPIService.m in Sources */,
 				0D2B45D920B002AB00CCD09F /* MKCTodoViewModel.m in Sources */,
 				0D2B45BD20AFFABE00CCD09F /* AppDelegate.m in Sources */,
 			);
